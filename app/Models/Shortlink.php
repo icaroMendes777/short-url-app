@@ -11,7 +11,7 @@ class Shortlink extends Model
 {
     protected $fillable = [
         'redirect_url', //a url submetida para ser encurtada
-        'url_code', //o código para gerar a url de redirecionamento
+        'short_url', //url encurtada
     ];
 
     protected static function boot()
@@ -20,13 +20,15 @@ class Shortlink extends Model
 
 
         static::creating(function ($model) {
-
-            //cria um hash único para ser usado como url_code
+            //cria um hash para ser utilizado na url
+            //checa antes se não teve nenhuma url criada com esse hash
             do {
                 $randomString = Str::random( env('SHORT_URL_CODE_LENGTH'));
-            } while (Shortlink::where('url_code', $randomString)->exists());
+                $shortUrl = route('redirect',['urlCode'=>$randomString]);
 
-            $model->url_code = $randomString;
+            } while (Shortlink::where('short_url', $shortUrl)->exists());
+
+            $model->short_url = $shortUrl;
         });
     }
 }

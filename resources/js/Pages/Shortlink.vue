@@ -6,7 +6,7 @@ import ShortLinkForm from '@/Components/ShortLinkForm.vue'
 import ShortlinksList from '@/Components/ShortlinksList.vue'
 import { defineProps } from 'vue';
 
-const props = defineProps(['title','redirectUrl','shortUrl','saveUrl']);
+const props = defineProps(['title','redirectUrl','shortUrl','saveUrl','lastLinks']);
 
 
 </script>
@@ -15,7 +15,7 @@ const props = defineProps(['title','redirectUrl','shortUrl','saveUrl']);
     <AppLayout title="Dashboard">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Shortlink System {{ $page.props.title }} {{ $page.props.shortUrl }}
+                Shortlink System
             </h2>
         </template>
 
@@ -45,7 +45,7 @@ const props = defineProps(['title','redirectUrl','shortUrl','saveUrl']);
                 <div class="bg-white overflow-hidden shadow-xl ">
                     <!-- <Welcome /> -->
                     <div class="w-full grid place-items-center">
-                        <ShortlinksList />
+                        <ShortlinksList :lastLinks="lastLinks"/>
                     </div>
 
                 </div>
