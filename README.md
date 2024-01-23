@@ -1,9 +1,13 @@
 # short-url-app
- <h1>laravel+jetstream app para encurtar urls</h1>
+ <h1>laravel app para encurtar urls</h1>
 
 
+<br/>
+<p>Essa aplicação fornece um serviço simples de ShortUrl</p>
+<p>Ela foi criada com laravel, e o jetstream scafolding, com vue e tailwind</p>
+<br/>
 <h2>
-Como Inicializar o projeto
+Como instalar o projeto
 </h2>
 
 <ul>
@@ -23,6 +27,16 @@ Execute ‘npm install’ na pasta raiz do projeto para instalar as dependência
 Execute ‘npm run dev’ para inicializar o projeto localmente ou ‘npm run build’ para criar um build de produção.
 </li>
 
+<li>Para utilizar o projeto siga para a rota raiz '/' onde você será redirecionado para o cadastro de usuários
+</li>
+
 </ul>
+
+<br/>
+<br/>
+
+
+
+
 
 
