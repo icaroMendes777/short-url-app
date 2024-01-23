@@ -54,7 +54,7 @@ function validateUrl(url) {
 }
 
 const copyToClipboard = () => {
-  navigator.clipboard.writeText(redirectUrl);
+  navigator.clipboard.writeText(shortUrl);
 };
 
 watch(oldLink, (newLink) => {

@@ -26,7 +26,7 @@ const props = defineProps(['title','redirectUrl','shortUrl','saveUrl','lastLinks
 
             <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl p-4 text-center">
-                   <h2> Entre com um link para gerar sua versão encurtada </h2>
+                   <h2 class="text-2xl font-bold mb-4 mt-8"> Entre com um link para gerar sua versão encurtada</h2>
 
                 </div>
             </div>

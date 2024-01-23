@@ -3,29 +3,17 @@
         <hr class="mt-8">
       <h2 class="text-2xl font-bold mb-4 mt-8">Últimos links gerados:</h2>
       <ul class="list-none space-y-2">
-        <li v-for="(link, index) in links" :key="index" class="border-b border-gray-300">
+        <li v-for="(link, index) in lastLinks" :key="index" class="border-b border-gray-300">
           <a :href="link.originalLink" class="block py-2 px-4 hover:bg-gray-100 transition duration-300">
             <div class="flex items-center justify-between">
               <div>
-                <p class="text-blue-500">{{ trimUrl(link.originalLink) }}</p>
-                <p class="text-sm text-gray-500">Original: {{ formatDate(link.date) }}</p>
+                <p class="text-blue-500">{{ trimUrl(link.redirect_url) }}</p>
+                <p class="text-sm text-gray-500">Gerado em: {{ formatDate(link.updated_at) }}</p>
               </div>
-              <div class="ml-4">
-                <p class="text-green-500">{{ trimUrl(link.shortLink) }}</p>
-                <p class="text-sm text-gray-500">Shortlink: {{ formatDate(link.shortLinkDate) }}</p>
-              </div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-gray-400 hover:text-blue-500 transition duration-300"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12zm0-8a2 2 0 11-4 0 2 2 0 014 0z"
-                  clip-rule="evenodd"
-                />
-              </svg>
+              <a class="ml-4" :href="link.short_url" target="_blank">
+                <p class="text-green-500">{{ trimUrl(link.short_url) }} </p>
+              </a>
+
             </div>
           </a>
         </li>
@@ -50,9 +38,12 @@
   ]);
 
   const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
-  };
+    const date = new Date(dateString);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+    };
 
   const trimUrl = (url) => {
     const maxLength = 45;
