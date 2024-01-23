@@ -3,7 +3,8 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\ShortUrlController;
+use App\Http\Controllers\logged\ShortUrlController;
+use App\Http\Controllers\public\RedirectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,14 +26,29 @@ Route::get('/', function () {
     ]);
 });
 
+
+/**
+ * ===================
+ * área logada do site
+ * ===================
+ */
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
-    Route::get('/make-url', [ShortUrlController::class, 'test'])->name('test');
+    Route::get('/make-url', [ShortUrlController::class, 'makeUrl'])->name('url.make');
+    Route::get('/save-url', [ShortUrlController::class, 'saveUrl'])->name('url.save');
 });
+
+/**
+ * ===================
+ * área pública do site
+ * ===================
+ */
+Route::get('/re/{urlCode}', [RedirectController::class, 'redirect'])->name('redirect');

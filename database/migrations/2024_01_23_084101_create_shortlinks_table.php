@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('shortlinks', function (Blueprint $table) {
             $table->id();
+            $table->text('redirect_url'); //a url para onde será direcionado
+            $table->string('url_code')->unique(); //o hash na url como identificador único
             $table->timestamps();
         });
     }
