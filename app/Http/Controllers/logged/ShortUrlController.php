@@ -28,11 +28,11 @@ class ShortUrlController extends Controller
     /**
      * recebe a url enviada pela rota url.make
      * cria um código de redirecionamento
-     * e retorna para essa mesma página com o código criado
+     * e retorna para url.make com o código criado
      */
     public function saveUrl(Request $request)
     {
-        //cadastra a url no banco de dados
+
         //a própria model cria um hash único como identificador do redirecionamento
         //o comprimento desse hash pode ser configurado em .env 'SHORT_URL_CODE_LENGTH'
         $shortlink = Shortlink::create(['redirect_url'=> $request['redirect_url'] ]);

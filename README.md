@@ -16,11 +16,15 @@ Configure o arquivo .env com as informações de ambiente, como a conexão com o
 </li>
 
 <li>
+Execute o comando ‘composer install’ na pasta raiz do projeto para baixar as dependências do back-end
+</li>
+
+<li>
 Execute o comando ‘php artisan migrate’ na pasta raiz do projeto para criar as tabelas no banco de dados
 </li>
 
 <li>
-Execute ‘npm install’ na pasta raiz do projeto para instalar as dependências
+Execute ‘npm install’ na pasta raiz do projeto para instalar as dependências usadas no front-end
 </li>
 
 <li>
