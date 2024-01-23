@@ -12,7 +12,7 @@ const props = defineProps(['title','redirectUrl','shortUrl','saveUrl','lastLinks
 </script>
 
 <template>
-    <AppLayout title="Dashboard">
+    <AppLayout title="Shortlink">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Shortlink System

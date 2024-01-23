@@ -16,19 +16,9 @@ class ShortUrlController extends Controller
      */
     public function makeUrl(Request $request)
     {
-        $shortUrl=null;
-
-        //se um shortlink foi requisitado ele será gerado para display
-        // if( isset($request['url_code']) && $request['url_code'])
-        //                 $shortUrl = $this->generateShortLink($request['url_code']);
-
-
-
         $lastLinks = Shortlink::latest()->take(10)->get();
 
         return Inertia::render('Shortlink', [
-            'title'=>'title',
-            'saveUrl'=> route('url.save'),
             'shortUrl' => $request['short_url'],
             'redirectUrl' => $request['redirect_url'] ?? null,
             'lastLinks' =>$lastLinks
@@ -52,16 +42,4 @@ class ShortUrlController extends Controller
                     'redirect_url'=> $shortlink['redirect_url']]);
     }
 
-    // /**
-    //  * utiliza o código único do link e a rota de redirecionamento para montar o shortlink
-    //  */
-    // private function generateShortLink($urlCode)
-    // {
-    //     return route('redirect',['urlCode'=>$urlCode]);
-    // }
-
-    // private function generateShortLinkForArray($array)
-    // {
-
-    // }
 }

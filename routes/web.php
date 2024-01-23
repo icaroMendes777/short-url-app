@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\logged\ShortUrlController;
 use App\Http\Controllers\public\RedirectController;
+use App\Models\Redirect;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +19,7 @@ use App\Http\Controllers\public\RedirectController;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return redirect('/register');
 });
 
 
@@ -39,7 +35,7 @@ Route::middleware([
 ])->group(function () {
 
     Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
+        return redirect('/make-url');
     })->name('dashboard');
 
     Route::get('/make-url', [ShortUrlController::class, 'makeUrl'])->name('url.make');
