@@ -1,10 +1,11 @@
 # short-url-app
- <h1>laravel app para encurtar urls</h1>
+ <h1>laravel + Jetstream app para encurtar urls</h1>
 
 
 <br/>
 <p>Essa aplicação fornece um serviço simples de ShortUrl</p>
 <p>Ela foi criada com laravel, e o jetstream scafolding, com vue e tailwind</p>
+<p>Inclui login de usuário e histórico de atividade</p>
 <br/>
 <h2>
 Como instalar o projeto
