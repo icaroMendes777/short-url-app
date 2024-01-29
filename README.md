@@ -29,7 +29,7 @@ Execute ‘npm install’ na pasta raiz do projeto para instalar as dependência
 </li>
 
 <li>
-Execute ‘npm run dev’ para inicializar o projeto localmente ou ‘npm run build’ para criar um build de produção.
+Execute 'php artisan serve'  e 'npm run dev' para inicializar o projeto localmente.
 </li>
 
 <li>Para utilizar o projeto siga para a rota raiz '/' onde você será redirecionado para o cadastro de usuários
