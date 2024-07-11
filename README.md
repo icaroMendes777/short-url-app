@@ -1,11 +1,9 @@
 # short-url-app
  <h1>laravel + Jetstream app para encurtar urls</h1>
 
-
 <br/>
-<p>Essa aplicação fornece um serviço simples de ShortUrl</p>
-<p>Ela foi criada com laravel, e o jetstream scafolding, com vue e tailwind</p>
-<p>Inclui login de usuário e histórico de atividade</p>
+<p>Este é um projeto de estudo criado para estudar o setup fullstack com jetstream. Essa aplicação fornece um serviço simples de encurtamento de Urls e serviço de autenticação</p>
+<p>Ela foi criada com laravel usando jetstream scafolding, com vue e tailwind</p>
 <br/>
 <h2>
 Como instalar o projeto
@@ -25,7 +23,7 @@ Execute o comando ‘php artisan migrate’ na pasta raiz do projeto para criar 
 </li>
 
 <li>
-Execute ‘npm install’ na pasta raiz do projeto para instalar as dependências usadas no front-end
+Execute ‘npm install’ na pasta raiz do projeto para instalar as dependências de front-end
 </li>
 
 <li>
