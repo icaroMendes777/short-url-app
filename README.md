@@ -2,7 +2,7 @@
  <h1>laravel + Jetstream app para encurtar urls</h1>
 
 <br/>
-<p>Esta é uma aplicação simples com o objetivo de testar a integração de Laravel e Jetstream. Essa aplicação fornece um serviço de autenticação e um serviço simples de encurtamento de Urls: ao fornecer uma url longa uma url curta é gerada. Quando a url curta é acessada a aplicação redireciona ao link original</p>
+<p>Esta é um projeto de estudos simples com o objetivo de testar a integração de Laravel e Jetstream. <br/>Essa aplicação fornece um serviço de autenticação e um serviço simples de encurtamento de Urls: ao fornecer uma url longa uma url curta é gerada. Quando a url curta é acessada a aplicação redireciona ao link original</p>
 <br/>
 <h2>
 Como instalar o projeto
